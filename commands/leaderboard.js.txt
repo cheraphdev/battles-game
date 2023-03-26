@@ -24,7 +24,6 @@ module.exports = {
         embeds: [{
           author: { name: `${interaction.user.username}#${interaction.user.discriminator}`, iconURL: `${interaction.user.displayAvatarURL()}` },
           description: mappedData.toString(),
-          footer: { text: 'Suivix aide votre serveur publicitaire 😁', iconURL: client.user.displayAvatarURL({ dynamic: true }) },
           color: 0xFFFF00
         }]
       }
@@ -32,7 +31,6 @@ module.exports = {
       embeds: [{
         author: { name: `${interaction.user.username}#${interaction.user.discriminator}`, iconURL: `${interaction.user.displayAvatarURL()}` },
         description: mappedData.toString(),
-        footer: { text: 'Suivix helps your ad server 😁', iconURL: client.user.displayAvatarURL({ dynamic: true }) },
         color: 0xFFFF00
       }]
     }
