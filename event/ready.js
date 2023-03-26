@@ -1,4 +1,5 @@
-const { REST, Routes, ActivityType } = require("discord.js");
+const { REST, Routes, ActivityType, EmbedBuilder } = require("discord.js");
+const dropSchema = require("../models/dropSchema");
 const config = require("../config");
 const mongoose = require("mongoose");
 const fs = require("fs");
@@ -35,5 +36,30 @@ module.exports = {
         /*rest.put(Routes.applicationCommands(client.user.id), { body: [] })
             .then(() => console.log('I have removed all the slash commands!'))
             .catch(console.error);*/
+
+        const sendEmbed = async () => {
+            const channel = client.channels.cache.get(config.channels.coffreChannel);
+            const embed = new EmbedBuilder()
+                .setTitle("A mystery box appears!")
+                .setDescription(`⭐ Click on **the reaction that appears** just below first to collect \`${config.economy.boxFlower} flowers\`.`)
+                .setFooter({ text: 'There is only 1 person who can collect the drop!', iconURL: client.user.displayAvatarURL({ dynamic: true }) })
+                .setColor(config.colors.default);
+            const sentMessage = await channel.send({ embeds: [embed] });
+            sentMessage.react(config.reaction.box);
+            const data = new dropSchema({
+                MessagesId: sentMessage.id
+            });
+            data.save();
+        };
+
+        let sentMessage;
+        setInterval(() => {
+            const delayInMs = Math.floor(Math.random() * (8 - 1 + 1) + 1) * 60 * 60 * 1000;
+            setTimeout(() => {
+                sendEmbed().then((message) => {
+                    sentMessage = message;
+                });
+            }, delayInMs);
+        }, 1 * 60 * 1000);
     }
 }

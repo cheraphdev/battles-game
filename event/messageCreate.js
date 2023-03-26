@@ -1,5 +1,7 @@
+const {  } = require("discord.js");
 const userSchema = require("../models/userSchema");
 const messagesSchema = require("../models/messagesSchema");
+const config = require("../config");
 
 module.exports = {
     name: 'messageCreate',
@@ -38,7 +40,7 @@ module.exports = {
             });
             data.save();
 
-            message.react('🌼');
+            message.react(config.reaction.flower);
         }
     }
 }
