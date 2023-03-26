@@ -1,0 +1,10 @@
+{
+    "shardReady": "<:validate:1071571218316152892>",
+    "shardReconnecting": "<:info:1071521506573701120>",
+    "shardResume": "<:status:1067453731127431178>",
+    "shardDisconnect": "<:close:1071523654573236285>",
+    "emojiCanvas": {
+        "heartNormal": "https://media.discordapp.net/attachments/1064296054671016038/1086320211705221191/Minecraft_Heart.png",
+        "heartDown": "https://media.discordapp.net/attachments/1064296054671016038/1086325768730194010/black_heart_minecraft.png"
+    }
+}
