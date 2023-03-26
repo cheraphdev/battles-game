@@ -1,0 +1,44 @@
+const config = require("../config");
+const Discord = require("discord.js");
+
+module.exports = {
+  data: {
+    description: "Send an administrative panel. (send the order in a private admin room and then delete this order)",
+    descriptionLocalizations: {
+      fr: "Envoie un panel administraftif. (envoyer la commande dans un salon admin privé et ensuite supprimer cette commande)"
+    }
+  },
+
+  async exe(client, interaction) {
+    await interaction.reply('Pong!');
+
+    let button = new Discord.ActionRowBuilder()
+      .addComponents(
+        new Discord.ButtonBuilder()
+          .setCustomId("info-start-giveaway")
+          .setLabel("Start giveaway")
+          .setEmoji("🏆")
+          .setStyle(Discord.ButtonStyle.Primary)
+          .setDisabled(false),
+
+        new Discord.ButtonBuilder()
+          .setCustomId("statsbot")
+          .setLabel("Stats")
+          .setEmoji("📊")
+          .setStyle(Discord.ButtonStyle.Primary)
+          .setDisabled(false),
+
+        new Discord.ButtonBuilder()
+          .setLabel("Invite Battles Game")
+          .setEmoji("<:battlesgame:1085930106800844961>")
+          .setURL(config.bot.inviteUrl)
+          .setStyle(Discord.ButtonStyle.Link)
+      )
+
+    const adminEmbed = new Discord.EmbedBuilder()
+      .setColor(config.colors.default)
+      .setAuthor({ name: `Control panel!`, iconURL: `${client.user.displayAvatarURL()}` })
+      .setDescription(`**Control the bot with the buttons below!**`)
+    return interaction.followUp({ embeds: [adminEmbed], components: [button] })
+  }
+}
