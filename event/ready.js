@@ -41,7 +41,7 @@ module.exports = {
             const channel = client.channels.cache.get(config.channels.coffreChannel);
             const embed = new EmbedBuilder()
                 .setTitle("A mystery box appears!")
-                .setDescription(`⭐ Click on **the reaction that appears** just below first to collect \`${config.economy.boxFlower} flowers\`.`)
+                .setDescription(`⭐ Click on **the reaction that appears** just below first to collect \`${config.economy.boxFlower}\` flowers.`)
                 .setFooter({ text: 'There is only 1 person who can collect the drop!', iconURL: client.user.displayAvatarURL({ dynamic: true }) })
                 .setColor(config.colors.default);
             const sentMessage = await channel.send({ embeds: [embed] });
