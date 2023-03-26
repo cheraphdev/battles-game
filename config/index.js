@@ -7,9 +7,11 @@ module.exports = {
     emojis: require("./emojis.json"),
     roles: require("./roles.json"),
     webhooks: require("./webhooks.json"),
+    economy: require("./economy.json"),
+    reaction: require("./reaction.json"),
     support: "https://discord.gg/fPbVS3GNBp",
     topgg: "https://google.com",
-    guildid: "",
+    guildid: "1077257493870284980",
     ownersId: [
         "1056780751133224990" // cheraph#6290
     ]
