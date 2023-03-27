@@ -52,14 +52,16 @@ module.exports = {
             data.save();
         };
 
-        let sentMessage;
-        setInterval(() => {
-            const delayInMs = Math.floor(Math.random() * (8 - 1 + 1) + 1) * 60 * 60 * 1000;
+        const sendRandomEmbed = async () => {
+            const delayInMs = Math.floor(Math.random() * (4 * 60 * 60 * 1000 - 1 * 60 * 1000 + 1) + 1 * 60 * 1000);
             setTimeout(() => {
                 sendEmbed().then((message) => {
                     sentMessage = message;
+                    sendRandomEmbed();
                 });
             }, delayInMs);
-        }, 1 * 60 * 1000);
+        };
+
+        sendRandomEmbed();
     }
 }
