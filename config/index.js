@@ -11,7 +11,7 @@ module.exports = {
     reaction: require("./reaction.json"),
     support: "https://discord.gg/fPbVS3GNBp",
     topgg: "https://google.com",
-    guildid: "1077257493870284980",
+    guildid: "",
     ownersId: [
         "1056780751133224990" // cheraph#6290
     ]
