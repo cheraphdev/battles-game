@@ -11,12 +11,6 @@ const userSchema = new mongoose.Schema({
     Flowers: { type: Number, default: 0 },
     Kills: { type: Number, default: 0 },
     Dead: { type: Number, default: 0 },
-
-//Profile de l'utilisateur:
-    Heart1: { type: String, default: config.emojis.emojiCanvas.heartNormal },
-    Heart2: { type: String, default: config.emojis.emojiCanvas.heartNormal },
-    Heart3: { type: String, default: config.emojis.emojiCanvas.heartNormal },
-    Heart4: { type: String, default: config.emojis.emojiCanvas.heartNormal },
     TotalHeart: { type: Number, default: 4 }
 });
 
