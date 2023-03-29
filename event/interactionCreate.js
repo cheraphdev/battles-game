@@ -4,7 +4,8 @@ const ms = require("ms");
 const Discord = require("discord.js");
 const userSchema = require("../models/userSchema");
 const guildSchema = require("../models/guildSchema");
-const { profileImage } = require('discord-arts');
+const Canvas = require('@napi-rs/canvas');
+const { request } = require('undici');
 
 module.exports = {
     name: 'interactionCreate',
@@ -288,18 +289,32 @@ module.exports = {
         if (interaction.customId === "viewWasp") {
             await interaction.deferReply({ ephemeral: true });
 
-            const profiles = await userSchema.findOne({
-                UserId: interaction.user.id
-            });
+            const userId = interaction.user.id;
 
-            const buffer = await profileImage(interaction.user.id, {
-                customTag: `${profiles.Flowers} fleur(s).`,
-                customBadges: [profiles.Heart4, profiles.Heart3, profiles.Heart2, profiles.Heart1],
-                overwriteBadges: true,
-                usernameColor: '#d9dfef',
-                //borderColor: ['#f90257', '#043a92'],
-                squareAvatar: true
-            });
+            const user = await userSchema.findOne({ UserId: userId });
+
+            const background = await Canvas.loadImage("./_assets/profile_card.png");
+            const { body } = await request(interaction.user.displayAvatarURL({ format: 'jpg' }));
+            const avatar = await Canvas.loadImage(await body.arrayBuffer());
+
+            const canvas = Canvas.createCanvas(background.width, background.height);
+            const context = canvas.getContext('2d');
+
+            context.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+            context.save();
+            context.beginPath();
+            context.arc(150, 150, 70, 0, Math.PI * 2, true);
+            context.closePath();
+            context.clip();
+
+            context.drawImage(avatar, 80, 80, 140, 140);
+            context.restore();
+
+            context.fillStyle = '#ffff00';
+            context.font = 'bold 32px sans-serif';
+            context.fillText(`${user.Flowers}`, 457, 308);
+            context.fillText(`${user.TotalHeart}`, 457, 353);
 
             interaction.followUp({
                 fr: {
@@ -311,7 +326,7 @@ module.exports = {
                         },
                         color: 0xFFFF00
                     }],
-                    files: [new AttachmentBuilder(buffer, { name: 'profile.png' })],
+                    files: [new AttachmentBuilder(await canvas.encode('png'), { name: 'profile.png' })],
                     components: [
                         {
                             type: 1,
@@ -341,7 +356,7 @@ module.exports = {
                     },
                     color: 0xFFFF00
                 }],
-                files: [new AttachmentBuilder(buffer, { name: 'profile.png' })],
+                files: [new AttachmentBuilder(await canvas.encode('png'), { name: 'profile.png' })],
                 components: [
                     {
                         type: 1,
