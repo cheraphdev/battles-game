@@ -13,6 +13,9 @@ Chaque saison, notre bot propose une bataille amusante pour vos membres ! MAINTE
 
 * Facile à utiliser ✌️
 * Temps réel 📈
+* Système de lootbox 📦
+* Rejoins le serveur support et gagne 25 fleurs 📫
+* Système de giveaway (admin) 🎉
 
 ## Installation
 
