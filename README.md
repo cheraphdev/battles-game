@@ -19,16 +19,16 @@ Chaque saison, notre bot propose une bataille amusante pour vos membres ! MAINTE
 
 ## Commandes
 
-`/embed` : Envoyer un embed dans un salon sur le serveur support pour pouvoir voir sont profile, voir le classement et voir les stats du bot. *(Renommé le fichier en .txt quand la commande à été utilisé.)*
-`/fight` : Combattre avec un utilisateur pour pouvoir gagner des resource ou en perdre.
-`/leaderboard` : Voir le classement complet.
-`/manage` : Pouvoir activer ou désactiver la season sur le serveur. *(Pas fonctionnel.)*
-`/panel` : Envoyer un embed dans un salon sur le serveur support pour pouvoir lacer des giveaway. *(Renommé le fichier en .txt quand la commande à été utilisé, et faire en sorte que personne ai accès au salon ou l'embed et envoyer.)*
-`/ping` : Voir la lattence du bot.
-`/profile` : Voir le nombre de vie et de fleurs que l'utilisateur a actuellement.
-`/setupembed` : Pouvoir faire en sorte que l'utilisateur ai sont propre embed d'explication sur sont propore serveur et que les autre utilisateur puisse voir leur profile.
-`/support` : Envoie le lien du serveur support de **Battles Game** et si l'utilisateur rejoins il gagnera 25 fleurs.
-`/vote` : Pouvoir voter pour le bot avec le système de top.gg qui fera gagner a l'utilisateur 25 fleurs.
+`/embed` : Envoyer un embed dans un salon sur le serveur support pour pouvoir voir sont profile, voir le classement et voir les stats du bot. *(Renommé le fichier en .txt quand la commande à été utilisé.)*\n
+`/fight` : Combattre avec un utilisateur pour pouvoir gagner des resource ou en perdre.\n
+`/leaderboard` : Voir le classement complet.\n
+`/manage` : Pouvoir activer ou désactiver la season sur le serveur. *(Pas fonctionnel.)*\n
+`/panel` : Envoyer un embed dans un salon sur le serveur support pour pouvoir lacer des giveaway. *(Renommé le fichier en .txt quand la commande à été utilisé, et faire en sorte que personne ai accès au salon ou l'embed et envoyer.)*\n
+`/ping` : Voir la lattence du bot.\n
+`/profile` : Voir le nombre de vie et de fleurs que l'utilisateur a actuellement.\n
+`/setupembed` : Pouvoir faire en sorte que l'utilisateur ai sont propre embed d'explication sur sont propore serveur et que les autre utilisateur puisse voir leur profile.\n
+`/support` : Envoie le lien du serveur support de **Battles Game** et si l'utilisateur rejoins il gagnera 25 fleurs.\n
+`/vote` : Pouvoir voter pour le bot avec le système de top.gg qui fera gagner a l'utilisateur 25 fleurs.\n
 
 ## Installation
 
