@@ -39,7 +39,7 @@ Chaque saison, notre bot propose une bataille amusante pour vos membres ! MAINTE
 3. Allez dans la racine du dossier et exécuter une invite de commande.
 4. Taper `npm i` pour installer les modules, puis taper `node sharder.js` pour démarrer le bot.
 
-Si vous avez des erreur au démarrage merci de me contacter sur Discord **koyaimdev#6290** !
+Si vous avez des erreur au démarrage merci de me contacter sur Discord **koyaim#6290** !
 
 ### Dépôts :
 
